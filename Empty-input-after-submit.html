@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="flex flex-col text-center items-center justify-center max-h-full">
+    <h2 class="text-2xl text-green-800">Simple Add calcutaror</h2><br>
+    <input type="number"
+    class="border border-3 p-4 rounded-lg text-2xl "
+    id="number1"
+    ><br><br>
+    <input type="number"
+    class="border border-3 p-4 rounded-lg text-2xl"
+    id="number2"
+    ><br><br>
+    <p id="result" class=" text-5xl mb-10"></p>
+
+    <button id="handleChange" class="bg-blue-700 text-white rounded-lg  p-3 w-40">Calculate</button>
+    </div>
+  
+    <script>
+
+        let number1=document.getElementById("number1")
+        let number2=document.getElementById("number2")
+        let result=document.getElementById("result");
+        let handleChange=document.getElementById("handleChange");
+
+
+        handleChange.addEventListener("click",()=>{
+            
+            //parseFloat help to change input from string to number
+
+         let answer=parseFloat(number1.value)+ parseFloat(number2.value)
+         
+            result.innerHTML=+answer;
+
+           //after 2s in put be empyt but setTimeout is not necessary
+
+            setTimeout(()=>{
+          number1.value="";
+            number2.value="";
+            },2000)
+           
+        })
+
+        
+
+    </script>
+
+
+
+<!-- tailwind css for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>
